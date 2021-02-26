@@ -11,20 +11,23 @@ int main(){
     int l = strlen(str);
     char t= str[l/2];
     int m = l/2;
+    int temp=l;
     for(int i=0;i<strlen(str);i++){
-         for(int sp=1;sp<l;sp++){
+         for(int sp=1;sp<temp;sp++){
              printf(" ");
         
     }
-         for(int j=l;j<=strlen(str);j++){
-             printf("%c",str[m]);
-             m++;
-             if(m==strlen(str)){
-                 m=0;
+         for(int j=i+1;j>0;j--){
+             if(m<l){
+                 printf("%c",str[m]);
+             }else{
+                  printf("%c",str[m-l]);
              }
+             m=m+1;
         
     }
-    l--;
+    m=l/2;
+    temp--;
       printf("\n");
     }
     
